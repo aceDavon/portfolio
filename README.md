@@ -97,7 +97,11 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - Logon to your account on [Vercel App](https://vercel.com)
 - Create New Project and link your account to your GitHub Account
 - Leave all setting as default when you are not sure what to do(Default settings are great!)
+<<<<<<< HEAD
 - Deploy your app and await a successful response. :)
+=======
+- Deploy your app and await a successful response :100
+>>>>>>> d88107c (Remove react boilerplate files)
 
 ## Authors
 
