@@ -11,15 +11,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - All Devices
 
-![](./src/Project%20Mockup//3-devices-black.png)
+![](./Project%20Mockup//3-devices-black.png)
 
 - Desktop
 
-![](./src/Project%20Mockup/laptop.png)
+![](./Project%20Mockup/laptop.png)
 
 - Mobile 
 
-![](./src/Project%20Mockup/mobile-black.png)
+![](./Project%20Mockup/mobile-black.png)
 
 ## Available Scripts
 
