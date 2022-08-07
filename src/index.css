@@ -1,3 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition-duration: 0.25s;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +25,52 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.banner p {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+.wiggle {
+  transition: all 3s ease;
+  animation-duration: 3s;
+  animation-name: 'wiggle';
+}
+
+.btxt p::after {
+  position: absolute;
+  content: '';
+  width: 45px;
+  height: 0.125rem;
+  bottom: -0.65rem;
+  right: 48%;
+  background-color: purple;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 60%;
+    width: 80%;
+  }
+
+  75% {
+    font-size: 80%;
+    margin-left: 25%;
+    width: 95%;
+  }
+
+  to {
+    font-size: 60%;
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes wiggle {
+  from {
+    transform: 'rotate(360deg) scale(0)';
+  }
+
+  to {
+    transform: 'rotate(0) scale(1.1)';
+  }
 }
