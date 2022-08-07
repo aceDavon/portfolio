@@ -1,6 +1,25 @@
+# Getting Started
+This is a personal portfolio project. It contains the projects, contributions and infomation about the Author(s) as stated within this documentation below. This project is MIT licensed and you can refer to the [licence](#📝-license) section to find out more.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Live Url
+[Deployment](https://portfolio-one-cyan-95.vercel.app/)
+
+### Deployment Mockups
+
+- All Devices
+
+![](./src/Project%20Mockup//3-devices-black.png)
+
+- Desktop
+
+![](./src/Project%20Mockup/laptop.png)
+
+- Mobile 
+
+![](./src/Project%20Mockup/mobile-black.png)
 
 ## Available Scripts
 
@@ -39,32 +58,71 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+
+# Project dependencies
+
+The following packages were used in building this project, all dependecies were pulled from the official NPM archives and so are safe and standard.
+
+* Please be advised against using unverified packages from unknown sources as this can expose you to threats and unwanted attacks *
+
+> React Router Dom :
+This helps to manage navigation within a single page application.
+- `npm i react-router-dom`
+
+> Date-fns : This was used to manipulate Date objects in React.
+  - `npm i date-fns`
+
+> Axios : This is a Javascript librariesused for making requests and handling calls to and from an API.
+
+  - `npm i axios`
+
+> TailwindCSS : This is a CSS/Javascript framework whose utility classes makes it easier to style front end components. To install tailwind for this project, please refer to the official Tailwind documentation [Here](https://tailwindcss.com/docs/installation)
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> Depending on your choice of deployment, This project can be deployed as follows:
 
-### `npm run build` fails to minify
+## Vercel App
+- Clone this repo/branch to your local machine using the terminal on your local machine;
+  `git clone git@github.com:aceDavon/portfolio.git`
+- Make your desired changes and push back to GitHub using the terminal again;
+  `git push --set-upstream <BranchName> <RemoteURL>`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Logon to your account on [Vercel App](https://vercel.com)
+- Create New Project and link your account toyour GitHub Account
+- Leave all setting as default when you are not sure what to do(Default settings are great!)
+- Deploy your app and await a successful response. :thumbs
+
+## Authors
+
+👤 **Onate Makoji David**
+
+- GitHub: [@aceDavon](https://github.com/aceDavon)
+- Twitter: [@sharkleshevon](https://twitter.com/sharkleshevon)
+- LinkedIn: [David Makoji](https://www.linkedin.com/in/david-makoji-b6090971/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
