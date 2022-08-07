@@ -95,9 +95,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
   `git push --set-upstream <BranchName> <RemoteURL>`
 
 - Logon to your account on [Vercel App](https://vercel.com)
-- Create New Project and link your account toyour GitHub Account
+- Create New Project and link your account to your GitHub Account
 - Leave all setting as default when you are not sure what to do(Default settings are great!)
-- Deploy your app and await a successful response. :thumbs
+- Deploy your app and await a successful response. :100
 
 ## Authors
 
