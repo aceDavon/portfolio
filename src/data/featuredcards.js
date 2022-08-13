@@ -46,12 +46,26 @@ export const FeaturedCards = [
 
 export const RepoLinks = [
   'aceDavon/html-css-linters',
-  'aceDavon/portfolio-project',
+  'aceDavon/Portfolio-project',
   'michael-duke/Awesome-Books',
+  'aceDavon/todo-list',
+];
+
+export const featuredRepo = [
+  'aceDavon/Portfolio-project',
+  'michael-duke/Awesome-Books',
+  'aceDavon/todo-list',
 ];
 
 export const RepoImg = [
   'https://acedavon.github.io/Portfolio-project/img/linting_tools.webp',
   'https://acedavon.github.io/Portfolio-project/img/html_css_logo.jpg',
   'https://user-images.githubusercontent.com/84629565/182920033-c8721e0a-1ace-4d2f-81b3-eb449ac697a6.png',
+  'https://github.com/aceDavon/todo-list/raw/master/src/img/3-devices-black.png',
+];
+
+export const FeaturedRepoImg = [
+  'https://acedavon.github.io/Portfolio-project/img/html_css_logo.jpg',
+  'https://user-images.githubusercontent.com/84629565/182920033-c8721e0a-1ace-4d2f-81b3-eb449ac697a6.png',
+  'https://github.com/aceDavon/todo-list/raw/master/src/img/3-devices-black.png',
 ];
