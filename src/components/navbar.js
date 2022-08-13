@@ -1,9 +1,24 @@
 import React from 'react';
 import { Facebook, Hamburger, Twitter, Whatsapp } from './common/icons';
+import Dashboard from './dashboard';
 
 const Navbar = () => {
+  const [dashboard, setDashboard] = React.useState(false);
+
+  const ShowDashBoard = () => {
+    setDashboard(!dashboard);
+  };
+
   return (
     <nav className=' relative w-full flex flex-wrap items-center justify-between py-4 bg-gray-100 text-gray-500 hover:text-gray-700 focus:text-gray-700 shadow-lg navbar navbar-expand-lg navbar-light'>
+      {dashboard && (
+        <Dashboard
+          sx={
+            'fixed left-5 md:left-44 top-5 bottom-5 right-5 md:right-44 rounded-xl bg-purple-100 backdrop-blur-lg wiggle z-50'
+          }
+          others={ShowDashBoard}
+        />
+      )}
       <div className='container-fluid w-full flex flex-wrap items-center justify-between px-6'>
         <button
           className=' navbar-toggler text-gray-500 border-0 hover:shadow-none hover:no-underline py-2 px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
@@ -34,7 +49,8 @@ const Navbar = () => {
               <a
                 whilehover={{ translateX: 6 }}
                 className='nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0'
-                href='/'
+                href='#'
+                onClick={() => ShowDashBoard()}
               >
                 Dashboard
               </a>
