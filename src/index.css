@@ -31,7 +31,7 @@ body {
 }
 
 .wiggle {
-  transition: all 3s ease;
+  transition: all 3s ease-in-out;
   animation-duration: 3s;
   animation-name: 'wiggle';
 }

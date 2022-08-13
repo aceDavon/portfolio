@@ -4,14 +4,16 @@ import { Calendar } from '../components/common/icons';
 import NativeCard from '../components/common/nativeCard';
 import TimeAgo from '../components/common/timeAgo';
 import Contact from '../components/contact';
-import { FeaturedCards, RepoImg } from '../data/featuredcards';
+import { featuredRepo, FeaturedRepoImg, RepoImg, RepoLinks } from '../data/featuredcards';
 import { allRepo } from '../data/reposData';
 
 const Landing = () => {
   const [modal, setModal] = React.useState(false);
   const [modalData, setModalData] = React.useState({});
   const [data, setData] = React.useState([]);
-  const local = JSON.parse(localStorage.getItem('github-repos'));
+  const [featured, setFeatured] = React.useState([]);
+  const local = JSON.parse(localStorage.getItem('allRepo'));
+  const featuredCards = [];
 
   const handleModal = (info) => {
     setModal(!modal);
@@ -19,8 +21,14 @@ const Landing = () => {
   };
 
   React.useEffect(() => {
-    allRepo();
+    allRepo(RepoLinks, 'allRepo');
+    allRepo(featuredRepo, 'featured');
     setData(local ?? []);
+    featuredRepo.map((repo, i) => {
+      const card = local.find((x) => x.full_name == repo);
+      featuredCards.push(card);
+      setFeatured(featuredCards);
+    });
   }, []);
 
   return (
@@ -30,7 +38,7 @@ const Landing = () => {
           sx={
             'fixed left-5 md:left-44 top-5 bottom-5 right-5 md:right-44 rounded-xl bg-purple-100 backdrop-blur-lg wiggle z-50'
           }
-          others={{ handleModal, modalData, data }}
+          others={{ handleModal, modalData, data, FeaturedRepoImg }}
         />
       )}
       <div
@@ -79,8 +87,8 @@ const Landing = () => {
         className='px-8 py-6 mt-10 md:flex md:justify-center md:gap-6'
         id='portfolio'
       >
-        {data &&
-          data.map((x) => {
+        {featured &&
+          featured.map((x) => {
             return (
               <li key={x.id}>
                 <div className='md:flex flex-start'>
