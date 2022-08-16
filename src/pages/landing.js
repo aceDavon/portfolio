@@ -60,9 +60,9 @@ const Landing = () => {
                 Front-End Developer
               </h4>
               <p className='text-sm text-white px-5 sm:px-52 hover:scale-110'>
-                I can help you build a product , feature or website Look through
-                some of my work and experience! If you like what you see and
-                have a project you need coded, don’t hestiate to contact me.
+                I build products, features and websites. You should look through
+                some of my works and experiences. If you like what you see, do
+                not hestiate to contact me.
               </p>
               <a
                 className='inline-block px-7 py-3 mb-1 mt-10 border-2 border-gray-200 text-gray-200 font-medium text-sm leading-snug uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out hover:scale-110'
