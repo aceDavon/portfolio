@@ -7,7 +7,7 @@ const NativeCard = ({cardMedia, cardContent}) => {
       <div className='flex flex-col md:flex-row w-full rounded-lg bg-white shadow-lg swaps'>
         <img
           className=' w-full h-60 object-cover md:w-60 rounded-t-lg md:rounded-none md:rounded-l-lg'
-          src={cardMedia[cardContent.imgId]}
+          src={cardMedia}
           alt=''
         />
         <div className='p-6 flex flex-col justify-start'>

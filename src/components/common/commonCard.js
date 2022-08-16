@@ -2,7 +2,7 @@ import React from 'react';
 import { FeaturedCards } from '../../data/featuredcards';
 
 const CommonCard = ({ sx, others }) => {
-  let { handleModal, modalData, FeaturedRepoImg, RepoImg } = others;
+  let { handleModal, modalData } = others;
   modalData = modalData.x;
 
   const getlivelink = (i) => {
@@ -24,7 +24,7 @@ const CommonCard = ({ sx, others }) => {
           modalData-mdb-ripple='true'
           modalData-mdb-ripple-color='light'
         >
-          <img className='rounded-t-lg' src={FeaturedRepoImg[modalData.imgId]} alt='' />
+          <img className='rounded-t-lg' src={modalData.repoImg} alt={modalData.id} />
         </a>
         <div className='p-6'>
           <h5 className='text-gray-900 text-xl font-medium mb-2'>

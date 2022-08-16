@@ -4,7 +4,7 @@ import { Calendar } from '../components/common/icons';
 import NativeCard from '../components/common/nativeCard';
 import TimeAgo from '../components/common/timeAgo';
 import Contact from '../components/contact';
-import { featuredRepo, FeaturedRepoImg, RepoImg, RepoLinks } from '../data/featuredcards';
+import { featuredRepo, FeaturedRepoImg, RepoLinks } from '../data/featuredcards';
 import { allRepo } from '../data/reposData';
 
 const Landing = () => {
@@ -22,9 +22,8 @@ const Landing = () => {
 
   React.useEffect(() => {
     allRepo(RepoLinks, 'allRepo');
-    allRepo(featuredRepo, 'featured');
     setData(local ?? []);
-    featuredRepo.map((repo, i) => {
+    featuredRepo.map((repo) => {
       const card = local.find((x) => x.full_name == repo);
       featuredCards.push(card);
       setFeatured(featuredCards);
@@ -157,7 +156,7 @@ const Landing = () => {
               key={x.id}
               className='w-full md:w-10/12 lg:w-8/12 mx-auto h-auto bg-purple-400 shadow-md shadow-purple-600 border-0 rounded-md'
             >
-              <NativeCard cardMedia={RepoImg} cardContent={x} />
+              <NativeCard cardMedia={x.repoImg} cardContent={x} />
             </div>
           );
         })}
