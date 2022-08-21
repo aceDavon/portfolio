@@ -1,20 +1,20 @@
-import { data } from 'autoprefixer';
-import axios from 'axios';
 import * as React from 'react';
 import { Facebook, LinkedIn, Twitter } from './common/icons';
 
 const Dashboard = ({ sx, others }) => {
   const [user, setUser] = React.useState([]);
+  const { Onclick } = others;
 
-  React.useEffect(
-    () => async () => {
+  React.useEffect(() => {
+    async function fetchData() {
       const url = `https://api.github.com/users/aceDavon`;
       const data = await fetch(url);
       const res = await data.json();
       setUser(res);
-    },
-    []
-  );
+    }
+
+    fetchData();
+  }, []);
   return (
     <div className={sx}>
       <div className='flex justify-center'>
@@ -55,7 +55,8 @@ const Dashboard = ({ sx, others }) => {
                 type='button'
                 className=' flex items-center gap-1 px-1 py-1.5 bg-blue-900 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
                 onClick={() =>
-                  (window.location.href ='https://www.linkedin.com/in/david-makoji-b6090971/')
+                  (window.location.href =
+                    'https://www.linkedin.com/in/david-makoji-b6090971/')
                 }
               >
                 <LinkedIn /> Makoji David
