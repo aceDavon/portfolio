@@ -1,14 +1,16 @@
 import React from 'react';
-import { FeaturedCards } from '../../data/featuredcards';
+// import { FeaturedURL } from '../../data/featuredcards';
 
 const CommonCard = ({ sx, others }) => {
   let { handleModal, modalData } = others;
   modalData = modalData.x;
 
-  const getlivelink = (i) => {
-    const link = FeaturedCards[i].links.find((x) => x.live);
-    return link.live;
-  };
+  // const getlivelink = (id) => {
+  //   FeaturedURL.map((x, i) => console.log(x[i], id));
+  //   // console.log(links);
+  //   // window.location.href = link.live;
+  //   return;
+  // };
 
   return modalData ? (
     <div
@@ -24,7 +26,11 @@ const CommonCard = ({ sx, others }) => {
           modalData-mdb-ripple='true'
           modalData-mdb-ripple-color='light'
         >
-          <img className='rounded-t-lg' src={modalData.repoImg} alt={modalData.id} />
+          <img
+            className='rounded-t-lg'
+            src={modalData.repoImg}
+            alt={modalData.id}
+          />
         </a>
         <div className='p-6'>
           <h5 className='text-gray-900 text-xl font-medium mb-2'>
@@ -36,9 +42,7 @@ const CommonCard = ({ sx, others }) => {
           <button
             type='button'
             className=' inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out'
-            onClick={() =>
-              (window.location.href = getlivelink(modalData.imgId))
-            }
+            onClick={() => window.location.href = modalData.live}
           >
             Live Project
           </button>
