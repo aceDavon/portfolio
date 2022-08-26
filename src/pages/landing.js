@@ -66,12 +66,14 @@ const Landing = () => {
               </p>
               <a
                 className='inline-block px-7 py-3 mb-1 mt-10 border-2 border-gray-200 text-gray-200 font-medium text-sm leading-snug uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out hover:scale-110'
-                href='#!'
+                href='https://drive.google.com/file/d/1-5wXqyJlRCeuhSdOIkHKFuE1FbgllWW0/view?usp=sharing'
+                target={'_blank'}
                 role='button'
                 data-mdb-ripple='true'
                 data-mdb-ripple-color='light'
+                norefferer
               >
-                See My Bio
+                See My Resume
               </a>
             </div>
           </div>
