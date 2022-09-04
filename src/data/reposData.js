@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FeaturedRepoImg, FeaturedURL, RepoImg } from './featuredcards';
+import { FeaturedURL, RepoImg } from './featuredcards';
 
 export let dataObj = [];
 
@@ -16,12 +16,12 @@ export const allRepo = async (arr, key) => {
   });
 };
 
-const handleData = (x, keys) => {
-  dataObj = dataObj.concat(x);
-  dataObj.map((y, i) => {
-    y.live = FeaturedURL[i];
-    y.repoImg = RepoImg[i];
+export const handleData = (x) => {
+  dataObj = [...dataObj];
+  dataObj.push(x);
+  const data = dataObj.map((y, i) => {
+    const obj = { ...y, live: FeaturedURL[i], repoImg: RepoImg[i] };
+    return obj;
   });
-  localStorage.setItem(keys, JSON.stringify(dataObj));
-  return dataObj;
+  return data;
 };

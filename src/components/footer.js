@@ -18,7 +18,7 @@ const Footer = () => {
         <div className='flex justify-center mb-9'>
           <a
             href='https://www.facebook.com/aceDavon/'
-            noreferrer
+            noreferrer='true'
             target={'_blank'}
             className='mr-9 text-gray-800'
           >
@@ -26,7 +26,7 @@ const Footer = () => {
           </a>
           <a
             href='https://twitter.com/sharkleshevon'
-            noreferrer
+            noreferrer='true'
             target={'_blank'}
             className='mr-9 text-gray-800'
           >
@@ -34,18 +34,18 @@ const Footer = () => {
           </a>
           <a
             href='mailto:makojidavid@gmail.com'
-            noreferrer
+            noreferrer='true'
             target={'_blank'}
             className='mr-9 text-gray-800'
           >
             <Google />
           </a>
-          <a href='#!' className='mr-9 text-gray-800'>
+          <a href='#!' className='mr-9 text-gray-800' noreferrer='true'>
             <Instagram />
           </a>
           <a
             href='https://www.linkedin.com/in/david-makoji-b6090971/'
-            noreferrer
+            noreferrer='true'
             target={'_blank'}
             className='mr-9 text-gray-800'
           >
@@ -53,7 +53,7 @@ const Footer = () => {
           </a>
           <a
             href='https://github.com/aceDavon'
-            noreferrer
+            noreferrer='true'
             target={'_blank'}
             className='text-gray-800'
           >
@@ -67,7 +67,7 @@ const Footer = () => {
         style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
       >
         © 2022 Copyright:
-        <a className='text-gray-800' href='https://hevons.com/acedavon'>
+        <a className='text-gray-800' href='https://hevons.com/acedavon' noreferrer='true'>
           {' '}
           Makoji David
         </a>

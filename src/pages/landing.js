@@ -1,19 +1,18 @@
 import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import CommonCard from '../components/common/commonCard';
 import { Calendar } from '../components/common/icons';
 import NativeCard from '../components/common/nativeCard';
 import TimeAgo from '../components/common/timeAgo';
 import Contact from '../components/contact';
-import { featuredRepo, FeaturedRepoImg, RepoLinks } from '../data/featuredcards';
-import { allRepo } from '../data/reposData';
+import { featuredData, selectAllUsers } from '../data/dataSlice';
 
 const Landing = () => {
+  const dispatch = useDispatch();
   const [modal, setModal] = React.useState(false);
   const [modalData, setModalData] = React.useState({});
-  const [data, setData] = React.useState([]);
-  const [featured, setFeatured] = React.useState([]);
-  const local = JSON.parse(localStorage.getItem('allRepo'));
-  const featuredCards = [];
+  const [repos, setRepos] = React.useState([]);
+  const { allRepos, featuredRepo } = useSelector(selectAllUsers);
 
   const handleModal = (info) => {
     setModal(!modal);
@@ -21,14 +20,12 @@ const Landing = () => {
   };
 
   React.useEffect(() => {
-    allRepo(RepoLinks, 'allRepo');
-    setData(local ?? []);
-    featuredRepo.map((repo) => {
-      const card = local.find((x) => x.full_name == repo);
-      featuredCards.push(card);
-      setFeatured(featuredCards);
-    });
-  }, []);
+    allRepos &&
+      setTimeout(() => {
+        dispatch(featuredData());
+        setRepos(allRepos);
+      }, 5000);
+  }, [allRepos]);
 
   return (
     <div className='relative'>
@@ -37,7 +34,7 @@ const Landing = () => {
           sx={
             'fixed left-5 md:left-44 top-5 bottom-5 right-5 md:right-44 rounded-xl bg-purple-100 backdrop-blur-lg wiggle z-50'
           }
-          others={{ handleModal, modalData, data, FeaturedRepoImg }}
+          others={{ handleModal, modalData }}
         />
       )}
       <div
@@ -71,7 +68,7 @@ const Landing = () => {
                 role='button'
                 data-mdb-ripple='true'
                 data-mdb-ripple-color='light'
-                norefferer
+                norefferer='true'
               >
                 See My Resume
               </a>
@@ -88,10 +85,10 @@ const Landing = () => {
         className='px-8 py-6 mt-10 md:flex md:justify-center md:gap-6'
         id='portfolio'
       >
-        {featured &&
-          featured.map((x) => {
+        {featuredRepo.length > 0 ? (
+          featuredRepo.map((x, i) => {
             return (
-              <li key={x.id}>
+              <li key={i}>
                 <div className='md:flex flex-start'>
                   <div className='bg-purple-600 w-6 h-6 flex items-center justify-center rounded-full -ml-3'>
                     <Calendar />
@@ -101,12 +98,14 @@ const Landing = () => {
                       <a
                         href='#!'
                         className='font-medium text-purple-600 hover:text-purple-700 focus:text-purple-800 duration-300 transition ease-in-out text-sm'
+                        norefferer='true'
                       >
                         {x.name}
                       </a>
                       <a
                         href='#!'
                         className='font-medium text-purple-600 hover:text-purple-700 focus:text-purple-800 duration-300 transition ease-in-out text-sm'
+                        norefferer='true'
                       >
                         <TimeAgo content={x} />
                       </a>
@@ -133,7 +132,7 @@ const Landing = () => {
                         <a
                           href={x.html_url}
                           target={'_blank'}
-                          rel='noreferrer'
+                          norefferer='true'
                           className='text-purple-600'
                         >
                           See Source
@@ -144,7 +143,24 @@ const Landing = () => {
                 </div>
               </li>
             );
-          })}
+          })
+        ) : (
+          <div class='border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto'>
+            <div class='animate-pulse flex space-x-4'>
+              <div class='rounded-full bg-slate-200 h-10 w-10'></div>
+              <div class='flex-1 space-y-6 py-1'>
+                <div class='h-2 bg-slate-200 rounded'></div>
+                <div class='space-y-3'>
+                  <div class='grid grid-cols-3 gap-4'>
+                    <div class='h-2 bg-slate-200 rounded col-span-2'></div>
+                    <div class='h-2 bg-slate-200 rounded col-span-1'></div>
+                  </div>
+                  <div class='h-2 bg-slate-200 rounded'></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </ol>
 
       <div className='text-center pt-10 border-0 relative btxt'>
@@ -152,16 +168,23 @@ const Landing = () => {
       </div>
 
       <div className='flex justify-evenly flex-col gap-4 w-full px-8 py-8'>
-        {data.map((x) => {
-          return (
-            <div
-              key={x.id}
-              className='w-full md:w-10/12 lg:w-8/12 mx-auto h-auto bg-purple-400 shadow-md shadow-purple-600 border-0 rounded-md'
-            >
-              <NativeCard cardMedia={x.repoImg} cardContent={x} />
-            </div>
-          );
-        })}
+        {repos.length > 0 ? (
+          repos.map((x, i) => {
+            return (
+              <div
+                key={i}
+                className='w-full md:w-10/12 lg:w-8/12 mx-auto h-auto bg-purple-400 shadow-md shadow-purple-600 border-0 rounded-md'
+              >
+                <NativeCard cardMedia={x.repoImg} cardContent={x} />
+              </div>
+            );
+          })
+        ) : (
+          <div className='w-52 h-12 flex justify-center gap-3 items-center bg-purple-600 mx-auto rounded-lg'>
+            <span>Waiting...</span>
+            <span className='animate-ping h-8 w-8 rounded-full bg-white opacity-75'></span>
+          </div>
+        )}
       </div>
       <div className='w-10/12 md:6/12 mx-auto my-10' id='contact'>
         <Contact />

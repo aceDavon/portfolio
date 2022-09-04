@@ -5,13 +5,6 @@ const CommonCard = ({ sx, others }) => {
   let { handleModal, modalData } = others;
   modalData = modalData.x;
 
-  // const getlivelink = (id) => {
-  //   FeaturedURL.map((x, i) => console.log(x[i], id));
-  //   // console.log(links);
-  //   // window.location.href = link.live;
-  //   return;
-  // };
-
   return modalData ? (
     <div
       className={`flex justify-center ${sx}`}

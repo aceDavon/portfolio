@@ -90,6 +90,7 @@ const Navbar = () => {
               role='button'
               data-bs-toggle='dropdown'
               aria-expanded='false'
+              noreferrer='true'
             >
               <img
                 src='https://avatars.githubusercontent.com/u/57240208?v=4'
@@ -110,7 +111,7 @@ const Navbar = () => {
                 <a
                   className='dropdown-item text-sm py-2 px-2 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100 relative'
                   href='https://wa.me/+2347018669454'
-                  noreferrer
+                  rel='norefferer'
                   target={'_blank'}
                 >
                   WhatsApp <Whatsapp />
@@ -120,7 +121,7 @@ const Navbar = () => {
                 <a
                   className='dropdown-item text-sm py-2 px-2 font-normal block w-full whitespace-nowrap bg-transparent text-gray-70 hover:bg-gray-100 relative'
                   href='https://www.facebook.com/aceDavon/'
-                  noreferrer
+                  rel='norefferer'
                   target={'_blank'}
                 >
                   Facebook
@@ -134,7 +135,7 @@ const Navbar = () => {
                 <a
                   className='dropdown-item text-sm py-2 px-2 font-normal block w-full whitespace-nowrap bg-transparent text-gray-70 hover:bg-gray-100 relative'
                   href='https://twitter.com/sharkleshevon'
-                  noreferrer
+                  noreferrer='true'
                   target={'_blank'}
                 >
                   Twitter
