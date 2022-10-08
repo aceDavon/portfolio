@@ -17,8 +17,8 @@ export const allRepo = async (arr, key) => {
 };
 
 export const handleData = (x) => {
-  dataObj = [...dataObj];
-  dataObj.push(x);
+  dataObj = [...dataObj, x];
+  // dataObj.push(x);
   const data = dataObj.map((y, i) => {
     const obj = { ...y, live: FeaturedURL[i], repoImg: RepoImg[i] };
     return obj;
