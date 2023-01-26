@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import CommonCard from '../components/common/commonCard';
-import { Calendar } from '../components/common/icons';
-import NativeCard from '../components/common/nativeCard';
-import TimeAgo from '../components/common/timeAgo';
-import Contact from '../components/contact';
-import { featuredData, selectAllUsers } from '../data/dataSlice';
+import * as React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import CommonCard from "../components/common/commonCard";
+import { Calendar } from "../components/common/icons";
+import NativeCard from "../components/common/nativeCard";
+import TimeAgo from "../components/common/timeAgo";
+import Contact from "../components/contact";
+import { featuredData, selectAllUsers } from "../data/dataSlice";
 
 const Landing = () => {
   const dispatch = useDispatch();
@@ -25,13 +25,13 @@ const Landing = () => {
         dispatch(featuredData());
         setRepos(allRepos);
       }, 5000);
-      return () => {
-        allRepos &&
-          clearTimeout(() => {
-            dispatch(featuredData());
-            setRepos(allRepos);
-          }, 5000);
-      }
+    return () => {
+      allRepos &&
+        clearTimeout(() => {
+          dispatch(featuredData());
+          setRepos(allRepos);
+        }, 5000);
+    };
   }, [allRepos]);
 
   return (
@@ -56,12 +56,12 @@ const Landing = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}
         >
           <div className="flex justify-center h-full" id="about">
-            <div className="text-white py-14 banner">
+            <div className="text-white py-24 banner">
               <h2 className="font-semibold text-4xl mb-4 transition ease-linear infinite delay-350 hover:animate-bounce">
                 Onate Makoji David
               </h2>
               <h4 className="font-semibold text-xl mb-6">
-                Front-End Developer
+                Fullstack Software Engineer
               </h4>
               <p className="text-sm text-white px-5 sm:px-52 hover:scale-110">
                 I build products, features and websites. You should look through
@@ -169,6 +169,36 @@ const Landing = () => {
           </div>
         )}
       </ol>
+
+      <div className="text-center pt-10 border-0 relative btxt">
+        <p className="text-4xl font-bold text-blue-300">Tecnologies</p>
+      </div>
+      <div className="flex justify-center items-center gap-10 py-8">
+        <ul className="space-y-4 list-none">
+          <span className="text-lg font-bold text-white pb-4">Stacks</span>
+          <li>JavaScript</li>
+          <li>PHP</li>
+          <li>Ruby</li>
+        </ul>
+        <ul className="space-y-4 list-none">
+          <span className="text-lg font-bold text-white pb-4">Frame Works</span>
+          <li>Laravel</li>
+          <li>VueJS</li>
+          <li>Rails</li>
+        </ul>
+        <ul className="space-y-4 list-none">
+          <span className="text-lg font-bold text-white pb-4">Libraries</span>
+          <li>ReactJS</li>
+          <li>Redux/Reduxtoolkit</li>
+          <li>TailwindCSS</li>
+        </ul>
+        <ul className="space-y-4 list-none">
+          <span className="text-lg font-bold text-white pb-4">Tools</span>
+          <li>Git</li>
+          <li>Github</li>
+          <li>Chrome Devtools</li>
+        </ul>
+      </div>
 
       <div className="text-center pt-10 border-0 relative btxt">
         <p className="text-4xl text-blue-300 font-bold">Featured Projects</p>
